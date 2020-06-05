@@ -1,0 +1,144 @@
+@mixin flex-between() {
+  display: flex;
+  justify-content: space-between;
+} 
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.SideChat {
+  height: 100vh;
+  width: 300px;
+  color: white;
+  background-color: #2f3e51;
+  font-weight: bold;
+
+  &__userData {
+    height: 100px;
+    background-color: #253141;
+    font-size: 16px;
+    line-height: 100px;
+    padding: 0 20px;
+    @include flex-between();
+  }
+    &__icon--edit {
+      color: white;
+      text-decoration: none;
+    }
+    &__icon--gear {
+      color: white;
+    }
+
+  &__chatList {
+    padding: 20px 20px 40px;
+    &--groupName {
+      font-size: 15px;
+      padding-bottom: 5px;
+    }
+    &--message {
+      font-size: 11px;
+    }
+  }
+}
+
+.MainChat {
+  height: 100vh;
+  width: calc(100vw - 300px);
+  background-color: #fafafa;
+
+  &__chatTop {
+    height: 100px;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    padding: 0 40px;
+    margin-bottom: 35px;
+    @include flex-between();
+  }
+    &__groupData {
+      &--name {
+        color: #333;
+        font-size: 20px;
+        padding: 35px 0 15px 0;
+      }
+      &--menber {
+          color: #999;
+          font-size: 12px;
+      }
+      &--menber span {
+        padding-left: 4px;
+      }
+    }
+    &__chatEdit--btn {
+      width: 72px;
+      color: #38aef0;
+      font-size: 16px;
+      line-height: 40px;
+      text-decoration: none;
+      border: 1px solid #38aef0;
+      padding: 0 20px;
+      margin-top: 28px;
+      display: inline-block;
+    }
+
+  &__chatContents {
+    height: calc(100vh - 225px);
+    padding-left: 40px;
+  }
+    &__messageTop {
+      display: flex;
+      &--name {
+        color: #333;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &--day {
+        color: #999;
+        font-size: 12px;
+        padding-left: 10px;
+      }
+    }
+    &__messageContents {
+      color: #434a54;
+      font-size: 14px;
+      padding: 12px 0 46px 0;
+    }
+
+  &__form {
+    height: 90px;
+    background-color: #d2d2d2;
+    padding: 20px 40px;
+    @include flex-between();
+  }
+    &__formType {
+      &--text {
+        width: calc(100vw - 495px);
+        line-height: 50px;
+        border: none;
+        padding: 0 10px;
+      }
+      &--image {
+        font-size: 25px;
+        line-height: 50px;
+        position: relative;
+        top: -50px;
+        left: calc(100vw - 530px);
+      }
+      &--image input {
+        display: none;
+      }
+    }
+    &__formSend input {
+      width: 100px;
+      color: white;
+      background-color: #38aef0;
+      font-size: 16px;
+      line-height: 50px;
+      border: none;
+      display: inline-block;
+    }
+}
