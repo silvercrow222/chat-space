@@ -1,0 +1,30 @@
+.MainChat
+  .MainChat__chatTop
+    .MainChat__groupData
+      %p.MainChat__groupData--name test
+      %p.MainChat__groupData--menber
+        Menber :
+        %span<>
+        crow
+    .MainChat__chatEdit
+      = link_to "#", class: "MainChat__chatEdit--btn" do
+        Edit
+  .MainChat__chatContents
+    .MainChat__messageTop
+      %p.MainChat__messageTop--name name
+      %p.MainChat__messageTop--day 2020/06/05(Fri)
+    .MainChat__messageContents
+      %p Hello!
+    .MainChat__messageTop
+      %p.MainChat__messageTop--name crow
+      %p.MainChat__messageTop--day 2020/06/05(Fri)
+    .MainChat__messageContents
+      %p How are you?
+  .MainChat__form
+    .MainChat__fromType
+      %input.MainChat__formType--text{placeholder: "type a message", type: "text"}
+      %label.MainChat__formType--image
+        = icon('fas', 'image', class: 'icon')
+        %input{type: "file"}
+    .MainChat__formSend
+      %input{type: "submit", value: "Send"}
