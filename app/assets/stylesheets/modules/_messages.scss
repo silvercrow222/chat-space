@@ -37,11 +37,15 @@
   &__chatList {
     padding: 20px 20px 40px;
     &--groupName {
+      color: white;
       font-size: 15px;
+      text-decoration: none;
       padding-bottom: 5px;
     }
     &--message {
+      color: white;
       font-size: 11px;
+      text-decoration: none;
     }
   }
 }

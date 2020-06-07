@@ -3,13 +3,16 @@
     .SideChat__userName
       = current_user.name
     .SideChat__icon
-      = link_to '#', class: "SideChat__icon--edit" do
+      = link_to new_group_path, class: "SideChat__icon--edit" do
         = icon('far', 'edit')
       = link_to edit_user_path(current_user), class: "SideChat__icon--gear" do
         = icon('fas', 'cog')
-  .SideChat__chatList
-    %p.SideChat__chatList--groupName techcamp
-    %p.SideChat__chatList--message まだメッセージがありません
-  .SideChat__chatList
-    %p.SideChat__chatList--groupName 78期
-    %p.SideChat__chatList--message まだメッセージがありません
+
+  .SideChat__groupWrapper
+    - current_user.groups.each do |group|
+      .SideChat__chatList
+        = link_to '#' do
+          .SideChat__chatList--groupName
+            = group.name
+          .SideChat__chatList--message
+            %p メッセージはまだありません
