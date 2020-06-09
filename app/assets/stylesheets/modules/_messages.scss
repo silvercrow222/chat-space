@@ -132,11 +132,12 @@
         top: -50px;
         left: calc(100vw - 530px);
       }
-      &--image input {
+      &--hidden {
         display: none;
       }
+      
     }
-    &__formSend input {
+    &__formSend {
       width: 100px;
       color: white;
       background-color: #38aef0;

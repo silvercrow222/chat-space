@@ -1,30 +1,22 @@
 .MainChat
   .MainChat__chatTop
     .MainChat__groupData
-      %p.MainChat__groupData--name test
+      .MainChat__groupData--name 
+        = @group.name
       %p.MainChat__groupData--menber
         Menber :
         %span<>
-        crow
+        - @group.users.each do |f|
+          = f.name
     .MainChat__chatEdit
-      = link_to "#", class: "MainChat__chatEdit--btn" do
+      = link_to edit_group_path(@group), class: "MainChat__chatEdit--btn" do
         Edit
   .MainChat__chatContents
-    .MainChat__messageTop
-      %p.MainChat__messageTop--name name
-      %p.MainChat__messageTop--day 2020/06/05(Fri)
-    .MainChat__messageContents
-      %p Hello!
-    .MainChat__messageTop
-      %p.MainChat__messageTop--name crow
-      %p.MainChat__messageTop--day 2020/06/05(Fri)
-    .MainChat__messageContents
-      %p How are you?
-  .MainChat__form
-    .MainChat__fromType
-      %input.MainChat__formType--text{placeholder: "type a message", type: "text"}
-      %label.MainChat__formType--image
+    = render @messages
+  = form_with model: [@group, @message], html: {class: 'MainChat__form'}, local: true do |f|
+    .MainChat__formType
+      = f.text_field :body, class: 'MainChat__formType--text', placeholder: 'type a message'
+      = f.label :image, class: 'MainChat__formType--image' do
         = icon('fas', 'image', class: 'icon')
-        %input{type: "file"}
-    .MainChat__formSend
-      %input{type: "submit", value: "Send"}
+        = f.file_field :image, class: 'MainChat__formType--hidden'
+    = f.submit 'Send', class: 'MainChat__formSend'
