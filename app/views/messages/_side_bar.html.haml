@@ -11,8 +11,8 @@
   .SideChat__groupWrapper
     - current_user.groups.each do |group|
       .SideChat__chatList
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .SideChat__chatList--groupName
             = group.name
           .SideChat__chatList--message
-            %p メッセージはまだありません
+            = group.show_last_message
