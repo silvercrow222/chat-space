@@ -92,6 +92,7 @@
   &__chatContents {
     height: calc(100vh - 225px);
     padding-left: 40px;
+    overflow: auto;
   }
     &__messageTop {
       display: flex;
