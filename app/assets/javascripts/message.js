@@ -1,5 +1,4 @@
 $(function() {
-<<<<<<< Updated upstream
   function buildHTML(data){
     if ( data.image ) {
       let html = `<div class="MainChat__messageTop">
@@ -58,7 +57,4 @@ $(function() {
       alert("メッセージの送信に失敗しました");
     });
   });
-=======
-
->>>>>>> Stashed changes
 });
