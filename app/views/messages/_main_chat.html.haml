@@ -3,8 +3,8 @@
     .MainChat__groupData
       .MainChat__groupData--name 
         = @group.name
-      %p.MainChat__groupData--menber
-        Menber :
+      %p.MainChat__groupData--member
+        Member :
         %span<>
         - @group.users.each do |f|
           = f.name
