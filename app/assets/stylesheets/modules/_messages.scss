@@ -39,15 +39,18 @@
     &--groupName {
       color: white;
       font-size: 15px;
-      text-decoration: none;
       padding-bottom: 5px;
+      text-decoration: none;
     }
     &--message {
       color: white;
       font-size: 11px;
-      text-decoration: none;
     }
   }
+}
+
+.noDecoration {
+  text-decoration: none;
 }
 
 .MainChat {

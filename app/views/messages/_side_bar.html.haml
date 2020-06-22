@@ -11,7 +11,7 @@
   .SideChat__groupWrapper
     - current_user.groups.each do |group|
       .SideChat__chatList
-        = link_to group_messages_path(group) do
+        = link_to group_messages_path(group), class: "noDecoration" do
           .SideChat__chatList--groupName
             = group.name
           .SideChat__chatList--message
